@@ -139,7 +139,7 @@ module.exports = function(RED) {
                 if (RED.settings.verbose) { node.log("out: "+out); }
                 if (node.child !== null) {
                     node.child.stdin.write(out+"\n");
-                    node.status({fill:"green",shape:"dot",text:msg.payload.toString()});
+                    node.status({fill:"green",shape:"dot",text:out.toString()});
                 }
                 else {
                     node.error(RED._("rpi-gpio.errors.pythoncommandnotfound"),msg);
